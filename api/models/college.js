@@ -2,13 +2,8 @@ const mongoose = require("mongoose");
 const slug = require("mongoose-slug-generator");
 mongoose.plugin(slug);
 
-// const Schema = mongoose.Schema;
 
 const college = new mongoose.Schema({
-    // _id: {
-    //     type: mongoose.Schema.Types.ObjectId
-    // }
-    // ,
     name: {
         type: String,
         required: true
