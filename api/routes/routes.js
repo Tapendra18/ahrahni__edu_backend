@@ -9,7 +9,7 @@ const BcomRoutes = require("./BcomRoutes");
 const MBARoutes = require("./MBARoutes");
 const McomRoutes = require("./McomRoutes");
 const CARoutes = require("./CARoutes");
-
+const CSRoutes = require("./CSRoutes");
 
 module.exports = function (app) {
     app.use('/api/v1', collegeRoutes);
@@ -20,7 +20,8 @@ module.exports = function (app) {
     app.use('/api/v1', baRoutes);
     app.use('/api/v1', BBARoutes);
     app.use('/api/v1', BcomRoutes);
-    app.use("/api/v1" , MBARoutes);
-    app.use("/api/v1" , McomRoutes);
-    app.use("/api/v1" , CARoutes);
+    app.use("/api/v1", MBARoutes);
+    app.use("/api/v1", McomRoutes);
+    app.use("/api/v1", CARoutes);
+    app.use('/api/v1', CSRoutes);
 }
