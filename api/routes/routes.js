@@ -6,6 +6,8 @@ const class12Routes = require("./class12Routes");
 const baRoutes = require("./baRoutes");
 const BBARoutes = require("./BBARoutes");
 const BcomRoutes = require("./BcomRoutes");
+const MBARoutes = require("./MBARoutes");
+
 
 module.exports = function (app) {
     app.use('/api/v1', collegeRoutes);
@@ -15,5 +17,6 @@ module.exports = function (app) {
     app.use('/api/v1', class12Routes);
     app.use('/api/v1', baRoutes);
     app.use('/api/v1', BBARoutes);
-    app.use('/api/v1', BcomRoutes)
+    app.use('/api/v1', BcomRoutes);
+    app.use("/api/v1" , MBARoutes);
 }
