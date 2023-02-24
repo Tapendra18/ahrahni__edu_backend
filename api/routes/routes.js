@@ -7,6 +7,7 @@ const baRoutes = require("./baRoutes");
 const BBARoutes = require("./BBARoutes");
 const BcomRoutes = require("./BcomRoutes");
 const MBARoutes = require("./MBARoutes");
+const McomRoutes = require("./McomRoutes");
 
 
 module.exports = function (app) {
@@ -19,4 +20,5 @@ module.exports = function (app) {
     app.use('/api/v1', BBARoutes);
     app.use('/api/v1', BcomRoutes);
     app.use("/api/v1" , MBARoutes);
+    app.use("/api/v1" , McomRoutes);
 }
