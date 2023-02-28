@@ -20,5 +20,6 @@ const upload = multer({ storage: storage })
 router.post('/college', upload.fields([{ name: "image", maxCount: 1 }]), collegeController.collegePost);
 router.get('/college', collegeController.collegeGet);
 router.delete('/college/:id', collegeController.CollegeDelete);
+router.patch('/college/:id' ,collegeController.collegeEdit);
 
 module.exports = router;

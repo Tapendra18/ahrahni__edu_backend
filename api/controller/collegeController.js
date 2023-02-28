@@ -38,8 +38,8 @@ liveController.collegeGet = async function (req, res) {
 
 liveController.CollegeDelete = async function (req, res) {
     try {
-        const college =  await colleges.findByIdAndDelete(req.params.id);
-        if(!req.params.id){
+        const college = await colleges.findByIdAndDelete(req.params.id);
+        if (!req.params.id) {
             return res.status(400).send();
         }
         res.send(college);
@@ -48,6 +48,28 @@ liveController.CollegeDelete = async function (req, res) {
         return res.status(500).send({
             success: false,
             msg: err + "error in delete API"
+        })
+    }
+}
+
+liveController.collegeEdit = async function (req, res) {
+    try {
+
+        const degree = await colleges.findOne({
+            '_id': req.params.id
+        });
+        const udegree = await colleges.findByIdAndUpdate(
+            { '_id': degree.id }, { $set: req.body }, { new: true }
+        )
+        return res.status(200).send({
+            success: true,
+            msg: 'college successfully update.',
+            data: udegree
+        })
+    } catch (err) {
+        res.status(400).send({
+            success: false,
+            msg: err
         })
     }
 }
